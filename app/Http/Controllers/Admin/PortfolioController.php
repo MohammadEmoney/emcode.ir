@@ -39,7 +39,7 @@ class PortfolioController extends Controller
      */
     public function store(StorePortfolioRequest $request)
     {
-        // dd($request->all());
+        dd($request->all());
         $portfolio = Portfolio::create($request->validated());
         return redirect()->route();
     }
