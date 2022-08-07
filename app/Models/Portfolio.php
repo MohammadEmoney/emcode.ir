@@ -11,7 +11,7 @@ class Portfolio extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'description', 'date',
+        'name', 'description', 'date'
     ];
 
     protected $casts = [
@@ -25,11 +25,16 @@ class Portfolio extends Model
      */
     protected static function booted()
     {
-        static::addGlobalScope(new ImageScope);
+        // static::addGlobalScope(new ImageScope);
     }
 
     public function images()
     {
         return $this->morphMany(Image::class, 'imageable');
+    }
+
+    public function scopeWithImage($query)
+    {
+        $query->whereHas('images');
     }
 }

@@ -22,6 +22,7 @@ class UserSeeder extends Seeder
         DB::table('users')->truncate();
         DB::table('roles')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        $role = Role::create(['name' => 'admin']);
         $user = User::factory()
             ->count(1)
             ->create([
@@ -30,6 +31,6 @@ class UserSeeder extends Seeder
                 'phone' => '+989354209109',
                 'password' => Hash::make('Eminef#7077'),
             ]);
-        $role = Role::create(['name' => 'admin']);
+
     }
 }

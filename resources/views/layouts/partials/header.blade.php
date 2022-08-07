@@ -4,7 +4,10 @@
 
             <div class="navbar-header">
 
-                <a class="site-title"><span>Em</span>Code</a>
+                <a class="site-title" href="{{ route('home') }}">
+                    <img src="{{ asset('img/EM_Logo.png') }}" alt="EM_CODE" width="30px">
+                    <span>Em</span>Code
+                </a>
 
             </div><!-- /.navbar-header -->
 
@@ -12,11 +15,11 @@
 
                 <ul class="nav navbar-nav navbar-right">
 
-                    <li class="active"><a href="index.html" data-toggle="dropdown">Home</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="ui-elements.html">UI Elements</a></li>
+                    <li class="{{ Route::is('home') ? "active" : "" }}"><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
+                    <li class="{{ Route::is('front.portfolios.*') ? "active" : "" }}"><a href="{{ route('front.portfolios.index') }}">{{ __('Portfolio') }}</a></li>
+                    <li class="{{ Route::is('blog.*') ? "active" : "" }}"><a href="{{ route('blog') }}">{{ __('Blog') }}</a></li>
+                    <li class="{{ Route::is('front.contacts.*') ? "active" : "" }}"><a href="{{ route('front.contacts.show') }}">{{ __('Contact') }}</a></li>
+                    {{-- <li class="{{ routeIs('/') ? "active" : "" }}"><a href="ui-elements.html">UI Elements</a></li> --}}
 
                 </ul>
 

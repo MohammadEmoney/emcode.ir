@@ -13,7 +13,7 @@ class UpdatePortfolioRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,20 @@ class UpdatePortfolioRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
+            'images' => 'required|array',
+            'images.*' => 'required|image|max:4096',
+            'date' => 'required|date'
+        ];
+    }
+
+    public function validated($key = null, $default = null)
+    {
+        return [
+            'name' => $this->name,
+            'description' => $this->description,
+            'date' => $this->date
         ];
     }
 }

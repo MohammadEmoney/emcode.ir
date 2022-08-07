@@ -5,7 +5,7 @@
     @include('layouts.partials.head')
 
 </head>
-<body>
+<body dir="{{ App::isLocale('fa') ? "rtl" : "ltr"}}">
 
     @include('layouts.partials.header')
 

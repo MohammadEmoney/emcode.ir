@@ -23,14 +23,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($portfolios as $porfolio)
+                @foreach($portfolios as $portfolio)
                     <tr>
                         <td class="py-1">
-                            <img src="{{ $portfolio->feature_image->src }}" alt="image"/>
+                            @if($portfolio->images->first())
+                             <img src="{{ asset($portfolio->images->first()->src) }}" alt="image" />
+                            @endif
                         </td>
-                        <td><a href="{{ route('portfolios.edit', $portfolio->id) }}">{{ $porfolio->name }}</a></td>
-                        <td>{{ $porfolio->description }}</td>
-                        <td>{{ $porfolio->date }}</td>
+                        <td><a href="{{ route('portfolios.edit', $portfolio->id) }}">{{ $portfolio->name }}</a></td>
+                        <td>{{ $portfolio->description }}</td>
+                        <td>{{ $portfolio->date }}</td>
                     </tr>
                 @endforeach
                 </tbody>

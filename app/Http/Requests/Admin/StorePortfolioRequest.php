@@ -27,7 +27,8 @@ class StorePortfolioRequest extends FormRequest
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'images' => 'required|array',
-            'images.*' => 'required|image|max:4096'
+            'images.*' => 'required|image|max:4096',
+            'date' => 'required|date'
         ];
     }
 
@@ -35,7 +36,8 @@ class StorePortfolioRequest extends FormRequest
     {
         return [
             'name' => $this->name,
-            'description' => $this->description
+            'description' => $this->description,
+            'date' => $this->date
         ];
     }
 }

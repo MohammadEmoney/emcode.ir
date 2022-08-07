@@ -1,16 +1,17 @@
 <?php
 
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\CourseController;
+use App\Http\Controllers\Front\BlogController;
+use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\HomeController;
-use App\Http\Controllers\MonthController;
-use App\Http\Controllers\ReportCardController;
-use App\Http\Controllers\StudentController;
-use App\Http\Controllers\TeacherController;
-use App\Http\Controllers\YearController;
+use App\Http\Controllers\Front\NewsLetterController;
+use App\Http\Controllers\Front\PortfolioController as FrontPortfolioController;
+use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,27 +25,41 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('guest')->group(function(){
-    Route::get('/', [HomeController::class, 'index']);
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('portfolios', [FrontPortfolioController::class, 'index'])->name('front.portfolios.index');
+Route::get('portfolios/{portfolio}', [FrontPortfolioController::class, 'show'])->name('front.portfolios.show');
+Route::get('blog', [BlogController::class, 'index'])->name('blog');
+Route::get('blog/{id}', [BlogController::class, 'show'])->name('blog.show');
+Route::get('contacts', [ContactController::class, 'show'])->name('front.contacts.show');
+Route::post('newsletter', [NewsLetterController::class, 'subscribe'])->name('front.newsletter.subscribe');
+Route::get('redis', function(){
+    // dump(app()->make('redis'));
+    $redis = Redis::set('name', 'Taylor');
+    dump(Redis::get('name'));
 });
 
-Auth::routes(['register' => false]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware(['auth'])->prefix('dashboard')->group(function(){
+    // Single Routes
+    Route::get('/', [AdminHomeController::class, 'index'])->name('dashboard');
+    Route::delete('images/{image}', [ImageController::class, 'destroy'])->name('images.destroy');
+    Route::patch('images/{image}', [ImageController::class, 'update'])->name('images.update');
+
+    // Resource Routes
+    Route::resource('/users', UserController::class);
+    Route::resource('/roles', RoleController::class);
+    Route::resource('/portfolios', PortfolioController::class);
+    Route::resource('/settings', SettingController::class);
 
 
-Route::middleware(['auth', 'role:admin'])->group(function(){
-    Route::get('dashboard', [AdminHomeController::class, 'index'])->name('dashboard');
-    Route::resource('portfolios', PortfolioController::class);
-    Route::resource('users', UserController::class);
-    Route::resource('roles', RoleController::class);
 });
 
-Route::middleware(['auth', 'role:admin|teacher'])->group(function(){
-    Route::get('teacher', [TeacherController::class, 'index']);
-    Route::resource('students', StudentController::class);
-    Route::resource('courses', CourseController::class);
-    Route::resource('years', YearController::class);
-    Route::resource('months', MonthController::class);
-    Route::resource('report-cards', ReportCardController::class);
-});
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';

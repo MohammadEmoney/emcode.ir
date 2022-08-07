@@ -4,11 +4,19 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StorePortfolioRequest;
+use App\Http\Requests\Admin\UpdatePortfolioRequest;
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
+use App\Services\ImageService;
 
 class PortfolioController extends Controller
 {
+    protected $image;
+
+    public function __construct(ImageService $image) {
+        $this->image = $image;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +25,6 @@ class PortfolioController extends Controller
     public function index()
     {
         $portfolios = Portfolio::with('images')->latest()->paginate();
-        // dd($portfolios);
         return view('admin.portfolios.index', compact('portfolios'));
     }
 
@@ -39,9 +46,13 @@ class PortfolioController extends Controller
      */
     public function store(StorePortfolioRequest $request)
     {
-        dd($request->all());
         $portfolio = Portfolio::create($request->validated());
-        return redirect()->route();
+        if($request->has('images')){
+            foreach($request->images as $img){
+                $this->image->save($img, get_class($portfolio), $portfolio->id);
+            }
+        }
+        return redirect()->route('portfolios.index');
     }
 
     /**
@@ -73,9 +84,15 @@ class PortfolioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Portfolio $portfolio)
+    public function update(UpdatePortfolioRequest $request, Portfolio $portfolio)
     {
-        //
+        $portfolio->update($request->validated());
+        if($request->has('images')){
+            foreach($request->images as $img){
+                $this->image->save($img, get_class($portfolio), $portfolio->id);
+            }
+        }
+        return redirect()->route('portfolios.index');
     }
 
     /**

@@ -1,27 +1,27 @@
 /*
- * Theme Name: 
- * Theme URI: 
+ * Theme Name:
+ * Theme URI:
  * Author: Milan Savov, Nikola Kostov
  * Author URI/Mail: milan.savov@gmail.com, nikolakostov1991@gmail.com
  * Version: 1.0
  * */
 
- /* TABLE OF CONTENT 
+ /* TABLE OF CONTENT
 *
 * - CUSTOM RESETS
     - Buttons
     - Forms
 * - LAYOUT
-* - HEADER 
+* - HEADER
     - Site Logo
     - Navigation
 * - HERO (BANNER)
 * - HOMEPAGE SECTIONS
-    - Features 
+    - Features
     - Services
-    - Map Feature 
+    - Map Feature
     - Portfolio
-    - Newsletter 
+    - Newsletter
 * - FOOTER
 * - PAGES
     - PORTFOLIO
@@ -70,6 +70,7 @@ h2 {
 
 h1,h2,h3,h4,h5 {
     color: #26292c;
+    font-family: 'Yekan';
 }
 
 p + p {
@@ -110,7 +111,7 @@ p + p {
 
 .btn-green {
     background-color: #6fc754;
-    color: #fff;  
+    color: #fff;
 }
 
 .btn:hover,
@@ -124,11 +125,11 @@ button.btn:focus {
 .btn-gray:hover,
 .btn-gray:focus {
     background-color: #6fc754;
-    color: #fff;    
+    color: #fff;
 }
 
-/* 
- * Forms 
+/*
+ * Forms
  */
 /* Input fields */
 .form-group {
@@ -187,7 +188,7 @@ input[type=radio] {
 
 .checkbox {
     margin: 0;
-} 
+}
 
 .checkbox + .checkbox,
 .radio-btn + .radio-btn {
@@ -205,8 +206,8 @@ input[type=radio] {
 .checkbox [type="checkbox"]:checked + label:before {
     content: '';
     position: absolute;
-    left:0; 
-    width: 20px; 
+    left:0;
+    width: 20px;
     height: 20px;
     background-color: #fff;
     border: 1px solid #f5f5f8;
@@ -294,7 +295,7 @@ input[type=radio] {
 .radio-btn [type="radio"]:checked + label:before {
     content: '';
     position: absolute;
-    left:0; 
+    left:0;
     top: 50%;
     width: 20px;
     height: 20px;
@@ -403,7 +404,7 @@ select {
 
 .bootstrap-select.open .dropdown-menu {
     display: block;
-    border: 1px solid #26272d; 
+    border: 1px solid #26272d;
     border-radius: 10px;
 }
 
@@ -433,7 +434,7 @@ select {
     border-top: 6px dashed;
     border-top: 6px solid\9;
     border-right: 6px solid transparent;
-    border-left: 6px solid transparent;   
+    border-left: 6px solid transparent;
 }
 
 .bootstrap-select .selected {
@@ -535,8 +536,8 @@ select {
 .accordion .panel-heading a.collapsed:hover,
 .accordion.accordion-gray .panel-heading a.collapsed:hover,
 .accordion .panel-heading a {
-    background-color: #6fc754;   
-    color: #fff; 
+    background-color: #6fc754;
+    color: #fff;
 }
 
 .accordion .panel-heading a.collapsed::after {
@@ -556,7 +557,7 @@ select {
     -webkit-transform: translateY(-50%);
 }
 
-.panel-group .panel-heading+.panel-collapse>.list-group, 
+.panel-group .panel-heading+.panel-collapse>.list-group,
 .panel-group .panel-heading+.panel-collapse>.panel-body {
     border: none;
 }
@@ -615,7 +616,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Iranian Sans', 'Montserrat', sans-serif;
     color: #26272d;
 }
 
@@ -656,7 +657,7 @@ html, body {
 }
 
 .site-title:hover {
-    color: #26272d;   
+    color: #26272d;
 }
 
 .site-title span {
@@ -677,7 +678,7 @@ html, body {
     display: inline-block;
 }
 
-.navbar-nav > li > a, 
+.navbar-nav > li > a,
 .slicknav_nav > li > a {
     padding: 0;
     font-size: 16px;
@@ -699,17 +700,17 @@ html, body {
     margin-left: 30px;
 }
 
-.nav .open > a, 
-.nav .open > a:focus, 
+.nav .open > a,
+.nav .open > a:focus,
 .nav .open > a:hover,
 .navbar-nav > li > a:hover,
 .navbar-nav > li > a:focus,
 .navbar-nav > li.active > a,
 .navbar-collapse li a:hover,
-.dropdown.open > a, 
+.dropdown.open > a,
 .site-header-white .dropdown.open > a,
-.dropdown-menu a:hover, 
-.dropdown:hover > a, 
+.dropdown-menu a:hover,
+.dropdown:hover > a,
 .dropdown-menu>li>a:focus,
 .dropdown-menu li a:hover,
 .slicknav_nav > li.active a,
@@ -778,8 +779,8 @@ html, body {
 
 /* HERO
 ================================================== */
-.hero { 
-    background: url(../img/hero.jpg) no-repeat center / cover; 
+.hero {
+    background: url(../img/hero.jpg) no-repeat center / cover;
     height: 100%;
     width: 100%;
     display: table;
@@ -874,15 +875,15 @@ html, body {
 }
 
 .portfolio-hero {
-    background: url(../img/portfolio-hero.jpg) no-repeat center / cover;     
+    background: url(../img/portfolio-hero.jpg) no-repeat center / cover;
 }
 
 .blog-hero {
-    background: url(../img/blog-hero.jpg) no-repeat center / cover;     
+    background: url(../img/blog-hero.jpg) no-repeat center / cover;
 }
 
 .contact-hero {
-    background: url(../img/contact-hero.jpg) no-repeat center / cover;     
+    background: url(../img/contact-hero.jpg) no-repeat center / cover;
 }
 
 /* SITEMAIN
@@ -947,13 +948,13 @@ html, body {
 }
 
 .service-info {
-    font-size: 13px; 
+    font-size: 13px;
 }
 
 /* Section: Map Feature */
 .section-map-feature {
     padding-top: 250px;
-    background: #071021 url(../img/map.png) no-repeat top center / cover; 
+    background: #071021 url(../img/map.png) no-repeat top center / cover;
 }
 
 .section-map-feature h2 {
@@ -1022,8 +1023,8 @@ html, body {
 }
 
 .portfolio-item-title {
-    width: 150px; 
-    top: 15px;  
+    width: 150px;
+    top: 15px;
     transition: left 0.25s ease-in-out, opacity 0.25s ease-in-out;
     -moz-transition: left 0.25s ease-in-out, opacity 0.25s ease-in-out;
     -webkit-transition: left 0.25s ease-in-out, opacity 0.25s ease-in-out;
@@ -1167,7 +1168,7 @@ html, body {
 
 a.twitter-bg {
     color: #55acee;
-    border-color: #55acee; 
+    border-color: #55acee;
 }
 
 a.twitter-bg:hover {
@@ -1186,11 +1187,11 @@ a.facebook-bg:hover{
 a.pinterest {
   color: #dd4b39;
   border-color: #dd4b39;
-} 
+}
 
 a.pinterest:hover{
   background-color: #dd4b39;
-} 
+}
 
 a.linkedin-bg {
   color: #007bb5;
@@ -1231,7 +1232,7 @@ a.linkedin-bg:hover {
     color: #fff;
 }
 
-/* 
+/*
  * Portfolio
  */
 .portfolio-sorting li:nth-child(-n+3){
@@ -1246,8 +1247,8 @@ a.linkedin-bg:hover {
 
 .portfolio-sorting li .active {
     background-color: #6fc754;
-    color: #fff;  
-    box-shadow: none;   
+    color: #fff;
+    box-shadow: none;
 }
 
 #grid {
@@ -1268,7 +1269,7 @@ a.linkedin-bg:hover {
     opacity: 0.3;
 }
 
-/* 
+/*
  * Portfolio-item
  */
 .project-img {
@@ -1296,7 +1297,7 @@ a.linkedin-bg:hover {
 
 .project-date-category p span {
     font-size: 14px;
-    text-transform: uppercase; 
+    text-transform: uppercase;
     color: #26272d;
     font-weight: 400;
 }
@@ -1315,7 +1316,7 @@ a.linkedin-bg:hover {
     padding-top: 0;
 }
 
-/* 
+/*
  * Blog
  */
 .blog-post + .blog-post {
@@ -1349,7 +1350,7 @@ a.linkedin-bg:hover {
 }
 
 .post-content a {
-    color: #8c8f94;   
+    color: #8c8f94;
 }
 
 .post-content .read-more {
@@ -1361,7 +1362,7 @@ a.linkedin-bg:hover {
 .post-content .read-more:after {
     content: '';
     display: block;
-    background-color: #8c8f94;  
+    background-color: #8c8f94;
     width: 20px;
     height: 2px;
     position: absolute;
@@ -1375,7 +1376,7 @@ a.linkedin-bg:hover {
 }
 
 .post-content .read-more:hover:after {
-    background-color: #6fc754; 
+    background-color: #6fc754;
 }
 
 .blog-post a:hover + .post-content .post-title a,
@@ -1424,7 +1425,7 @@ a.linkedin-bg:hover {
     margin-top: 60px;
 }
 
-/* 
+/*
  * Blog post
  */
 /* Post Comments */
@@ -1512,7 +1513,7 @@ a.linkedin-bg:hover {
     font-size: 18px;
     margin: 0 0 30px;
     text-transform: uppercase;
-    letter-spacing: 1px;   
+    letter-spacing: 1px;
 }
 
 .widget .list-unstyled a:hover {
@@ -1533,7 +1534,7 @@ a.linkedin-bg:hover {
     border-top: 1px solid rgba(38,41,44,0.05)
 }
 
-/* 
+/*
  * Contact
  */
 /* Section: Contact-us */
@@ -1549,7 +1550,7 @@ a.linkedin-bg:hover {
     margin: 0 0 10px 20px;
     color: #26292c;
     font-size: 16px;
-    font-weight: 300; 
+    font-weight: 300;
 }
 
 .section-contact-us textarea {
@@ -1590,3 +1591,227 @@ a.linkedin-bg:hover {
   height: 500px;
   width: 100%
 }
+
+.pricing-table{
+    padding-bottom: 20px;
+    background: #fff;
+    position: relative;
+    text-align: center;
+    border-radius: 10px;
+    transition: all .3s ease 0s;
+}
+
+.pricing-title{
+    position: relative;
+    padding: 40px 20px 170px;
+    margin: 0;
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    overflow: hidden;
+}
+
+.pricing-title::before{
+    content: "";
+    height: 200px;
+    width: 280px;
+    position: absolute;
+    bottom: -175px;
+    left: -46px;
+    background: #fff;
+    border-radius: 80px;
+    transform: rotate(-85deg);
+}
+
+.pricing-title::after{
+    content: "";
+    height: 200px;
+    width: 280px;
+    position: absolute;
+    top: 150px;
+    right: -70px;
+    bottom: auto;
+    left: auto;
+    background: #fff;
+    border-radius: 100px;
+    transform: rotate(-40deg);
+}
+
+.pricing-tag{
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    background: #fff;
+    color: #404040;
+    display: inline-block;
+    padding: 30px 0;
+    font-size: 30ox;
+    line-height: 50px;
+    font-weight: 600;
+    border-radius: 50%;
+    transform: translate(-50%);
+    transition: all .3s ease 0s;
+    box-shadow: 0 0 0 8px rgb(0, 0, 0, .3);
+}
+
+.pricing-table:hover .pricing-tag{
+    color: #fff;
+}
+
+.pricing-sub-tag{
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 0;
+}
+
+.pricing-content{
+    list-style: none;
+    padding: 0;
+    margin: 20px;
+    text-align: left;
+    transition: all .3s ease 0s;
+}
+
+.pricing-content li {
+    padding: 7px 0 7px 50px;
+    position: relative;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.pricing-content li::before{
+    content: "\f00c";
+    height: 24px;
+    width: 24px;
+    font-weight: 900;
+    font-family: "Font Awesome 5 free";
+    line-height: 20px;
+    position: absolute;
+    text-align: center;
+    background: #fff;
+    border-radius: 50%;
+    border: 2px solid #fb6ee5;
+    color: #fb6ee5;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+}
+
+.pricing-content li.disable{
+    color: #707070 !important;
+}
+
+.pricing-content li.disable::before{
+    content: "\f00d";
+    color: #707070 !important;
+    border-color: #707070 !important;
+}
+
+.pricing-signup{
+
+    color: #404040;
+    position: relative;
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .3s ease 0s;
+    z-index: 1;
+}
+
+.basic .pricing-signup {
+    background: linear-gradient(to bottom right, #fa6fe6, #ffef65);
+}
+
+.standard .pricing-signup {
+    background: linear-gradient(to bottom right, #44f2b5, #4cbde2);
+}
+
+.professional .pricing-signup {
+    background: linear-gradient(to bottom right, #66fd9c, #f6fa60);
+}
+
+.pricing-signup:hover{
+    color: #fff;
+}
+
+.pricing-signup::before{
+    content: "";
+    height: 92%;
+    width: 98%;
+    position: absolute;
+    text-align: center;
+    background: #fff;
+    border-radius: 30px;
+    top: 2px;
+    left: 2px;
+    z-index: -1;
+}
+
+
+.pricing-signup:hover::before{
+    background: 0 0;
+}
+
+
+.basic .pricing-title{
+    background: linear-gradient(to bottom right, #fa6fe6, #ffef65);
+}
+
+.standard .pricing-title{
+    background: linear-gradient(to bottom right, #44f2b5, #4cbde2);
+}
+
+.professional .pricing-title{
+    background: linear-gradient(to bottom right, #66fd9c, #f6fa60);
+}
+
+.basic:hover .pricing-tag{
+    background: linear-gradient(to bottom right, #fa6fe6, #ffef65);
+}
+
+.professional:hover .pricing-tag{
+    background: linear-gradient(to bottom right, #66fd9c, #f6fa60);
+}
+
+.standard:hover .pricing-tag{
+    background: linear-gradient(to bottom right, #44f2b5, #4cbde2);
+}
+
+.basic .pricing-content li::before{
+    border-color: #fb6ee5;
+    color: #fb6ee5;
+}
+
+.standard .pricing-content li::before{
+    border-color: #4bc7db;
+    color: #4bc7db;
+}
+
+.pricing-content .fa-star {
+    /* color: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), */
+                /* radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%); */
+                color: #FFD700;
+}
+
+#canvas-image {
+    height: 100%;
+    width: 100%;
+    display: table;
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+
